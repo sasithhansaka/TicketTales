@@ -18,6 +18,13 @@ public class UserService {
                return userRepository.save(user_ex);
            }
 
-
+    public boolean authenticate(String email, String password) {
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            return user.getPassword().equals(password);
+        }
+        return false;
+    }
 
 }

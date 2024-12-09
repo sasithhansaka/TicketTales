@@ -25,5 +25,15 @@ public class UserController {
        return userService.user_save(userEx);
    }
 
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody User user1) {
+        boolean isAuthenticated = userService.authenticate(user1.getEmail(), user1.getPassword());
+        if (isAuthenticated) {
+            return ResponseEntity.ok(user1.getEmail());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+    }
+
 
 }
