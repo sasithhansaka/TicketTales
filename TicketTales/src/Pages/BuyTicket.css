@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.TicketBuy-header-conatiner {
+  width: 100%;
+  height: 250px;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10vh;
+}
+.TicketBuy-header-conatiner .event-title {
+  padding-top: 150px;
+  font-size: 36px;
+  margin-left: 170px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.header-details-under-div {
+  display: flex;
+  gap: 4px;
+  color: #ffffffc5;
+  margin-left: 80px;
+  margin-top: 1px;
+  font-family: "Poppins", sans-serif;
+}
+
+.header-details-under-div i {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.details-container {
+  position: relative;
+}
+
+.ticket-buy-conayiner {
+  display: flex;
+}
+
+.ticket-buy-conayiner .detiails-container-ticket-buy {
+  width: 880px;
+  margin-left: 140px;
+}
+
+.detiails-container-ticket-buy .show-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #61636a;
+  text-align: left;
+  padding: 20px;
+}
+
+.detiails-container-ticket-buy .show-description-title {
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 60px;
+  color: #1259f3;
+}
+
+.detiails-container-ticket-buy .ticket-policies {
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  color: #61636a;
+  margin-bottom: 40px;
+}
+
+.ticket-policies h1 {
+  color: #61636a;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.ticket-container {
+  position: fixed;
+  right: 4%;
+  z-index: 140;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.086);
+  margin-top: -220px;
+}
+
+.ticket-container img {
+  width: 400px;
+  height: 450px;
+  border-radius: 14px;
+  object-fit: cover;
+  padding: 8px;
+}
+
+.buy-now-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111111d3;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.buy-now-div {
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  height: 100%;
+  animation: slidenypop 0.2s ease-out forwards;
+  border-right: 1px solid rgba(255, 255, 255, 0.055);
+  box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);
+  left: 0;
+  top: 0;
+  opacity: 0;
+  padding: 10px;
+}
+
+@keyframes slidenypop {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.buy-now-div .list-0 {
+  font-size: larger;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+}
+
+.buy-now-div .list-1 {
+  font-family: "Poppins", sans-serif;
+  color: #61636a;
+  font-size: smaller;
+}
+
+hr {
+  color: #3f404325;
+  opacity: 0.2;
+  margin-top: 10px;
+}
+
+.entrance-ticket-quntity-div {
+  display: flex;
+  border: 1px solid #3f40431d;
+  gap: 100px;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+  margin-bottom: 400px;
+}
+
+.entrance-ticket-quntity-div .list-3 {
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+.entrance-ticket-quntity-div .list-4 {
+  color: #61636a;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+.entrance-ticket-quntity-div .circle-div {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: #1259f30f;
+  cursor: pointer;
+  border-radius: 50%;
+  font-family: "Poppins", sans-serif;
+}
+
+.entrance-ticket-quntity-div .tickt-quntity-text {
+  color: #111111;
+  font-family: "Poppins", sans-serif;
+  margin-top: 4px;
+}
+
+.buy-now-popup-container .order-confirm-div {
+  display: flex;
+  gap: 110px;
+  font-family: "Poppins", sans-serif;
+}
+
+.buy-now-popup-container .totalcost-text {
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.confirm-close-div{
+  display: flex;
+  gap:10px;
+  padding: 10px;
+}
+
+.confirm-close-div .close-button{
+  width: 170px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border:  1px solid #61636a30;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.confirm-close-div .confirm-button{
+  width: 170px;
+  height: 40px;
+  background-color: #1259f3;
+  border-radius: 6px;
+  border:  1px solid #1259f3;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+}
