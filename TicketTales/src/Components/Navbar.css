@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bangers&family=Lilita+One&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 10vh;
+  color: #000000;
+  z-index: 200;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(9, 9, 9, 0.077);
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: 900;
+  margin-right: 50px;
+  letter-spacing: 1px;
+  margin-left: 50px;
+  font-family: "Bangers", system-ui;
+  color: #1259f3;
+
+}
+
+.nav-features {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+
+.nav-features a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-features li:not(.search):hover {
+  transform: translateY(-4px);
+}
+
+.nav-features li {
+  transition: transform 0.4s ease-in-out;
+}
+
+.loginBtn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #1259f3;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.details_containerfavcount {
+  width: 100px;
+  height: 40px;
+}
+
+.fav_section .circle_count {
+  position: absolute;
+}
+
+.favcount_number {
+  margin-left: 40px;
+}
+
+.logo strong{
+  color: #5872f2;
+}
+
+.nav .sign-in-button{
+  width: 120px;
+  height: 35px;
+  background-color: #1259f3;
+  border-radius: 6px;
+  border:  1px solid #1259f3;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nav .register-button{
+  width: 120px;
+  height: 35px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border:  1px solid #61636a00;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.else-sign-in-div{
+  margin-left: 520px;
+}

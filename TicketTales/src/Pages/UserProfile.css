@@ -1,0 +1,35 @@
+.step-div{
+    margin-left: 500px;
+    padding-left: 50px;
+    font-family: "Poppins", sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.099);
+    border-left:1px solid rgba(0, 0, 0, 0.099);
+    border-right:1px solid rgba(0, 0, 0, 0.099);  
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 500px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 4px;
+}
+
+.step-div p{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.407);
+    margin-top: 9px;
+    margin-left: 5px;
+}
+
+.step-div button{
+    border: none;
+    background-color: white;
+    margin-bottom: 45px;
+    margin-top: 9px;
+    color: #1259f3;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}

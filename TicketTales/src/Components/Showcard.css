@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.clothe-card-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 140px;
+}
+
+.show-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.118);
+  width: 300px;
+  height: 460px;
+  position: relative;
+  margin-bottom: 40px;
+  transition: transform 0.7s ease;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.deal-card{
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 300px;
+  height: 420px;
+  background-color: none;
+  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  z-index: 20;
+}
+
+.deal-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: rotate(45deg);
+  opacity: 0.7;
+  animation: shine 3s infinite;
+  /* pointer-events: none;  */
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(45deg) translateX(-150%);
+  }
+  50% {
+    transform: rotate(45deg) translateX(0%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(150%);
+  }
+}
+
+.show-card:hover {
+  transform: scale(1.01) translateY(-5px); 
+}
+
+.show-card img {
+  width: 295px;
+  height: 295px;
+  padding: 8px;
+  border-radius: 15px;
+  z-index: 20;
+}
+
+.showcard-event-details {
+  padding-left: 22px;
+}
+
+.showcard-event-details .event-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.showcard-event-details i {
+  color: #878b93;
+  font-size: 15px;
+  padding-top: 2px;
+  padding-left: 9px;
+}
+
+.showcard-event-details .event-date_time {
+  color: #80838b;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.showcard-event-details .event-venue {
+  color: #80838b;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.showcard-event-details .event-ticket_price {
+  font-family: "Poppins", sans-serif;
+  color: #80838b;
+  margin-top: 8px;
+}
+
+.showcard-event-details .highlight {
+  color: #1259f3;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+
+.Star-function{
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  z-index: 10;
+  padding: 5px;
+  background-color: #22C55E;
+  border-radius: 15px;
+  font-size: smaller;
+  font-family: "Poppins", sans-serif;
+}
+
+.Buy-ticket-button {
+  bottom: 0%;
+  width:100%;
+  height: 42px;
+  margin-top: 10px;
+  background-color: #111111;
+  color: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  z-index: 40;
+}
+
+.sold-out-button{
+  bottom: 0%;
+  width: 300px;
+  height: 42px;
+  margin-top: 10px;
+  background-color: #F7A1A1;
+  color: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  border: none; 
+  cursor: pointer;
+}
+
+.no-event-div{
+  margin-left: 600px;
+}
+
+.no-event-div img{
+  width: 100px;
+  height: 100px;
+  margin-top: 60px;
+  margin-left: 14px;
+}
+
+.no-event-div p{
+  font-family: "Poppins", sans-serif;
+margin-bottom: 140px;
+}
