@@ -101,7 +101,7 @@ function BuyTicket() {
       const emailResponse = await axios.post(
         "http://localhost:8082/send-email",
         {
-          email, // the user's email
+          email,
           subject: `Ticket Confirmation: ${event.title}`,
           message: `
     Hello ${email},
@@ -211,60 +211,6 @@ function BuyTicket() {
 
                 <hr></hr>
 
-                {/* <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    marginTop: "10px",
-                  }}
-                >
-                  <label style={{ fontWeight: "bold" }}>Quantity:</label>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                    }}
-                  >
-                    <button
-                      onClick={handleDecrease}
-                      style={{
-                        padding: "5px 10px",
-                        border: "1px solid #ccc",
-                        backgroundColor: "#f0f0f0",
-                        borderRadius: "4px",
-                        cursor: "pointer",
-                      }}
-                      disabled={ticketQuantity === 1}
-                    >
-                      -
-                    </button>
-                    <p
-                      style={{
-                        fontSize: "16px",
-                        margin: "0",
-                        minWidth: "20px",
-                        textAlign: "center",
-                      }}
-                    >
-                      {ticketQuantity}
-                    </p>
-                    <button
-                      onClick={handleIncrease}
-                      style={{
-                        padding: "5px 10px",
-                        border: "1px solid #ccc",
-                        backgroundColor: "#f0f0f0",
-                        borderRadius: "4px",
-                        cursor: "pointer",
-                      }}
-                      disabled={ticketQuantity === event.available_seats}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div> */}
                 <div className="order-confirm-div">
                   <div>
                     <p>Subtotal</p>
@@ -274,11 +220,14 @@ function BuyTicket() {
                     <p className="totalcost-text">{totalCost.toFixed(2)} LKR</p>
                   </div>
                 </div>
-               <div className="confirm-close-div">
-               <button onClick={closepopup} className="close-button">close</button>
-               <button onClick={confirmbooking} className="confirm-button">confirm</button>
-               </div>
-                
+                <div className="confirm-close-div">
+                  <button onClick={closepopup} className="close-button">
+                    close
+                  </button>
+                  <button onClick={confirmbooking} className="confirm-button">
+                    confirm
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -439,13 +388,7 @@ function BuyTicket() {
                   sold Out
                 </button>
               )}
-              {/* {event.available_seats > 0 ? (
-                <button onClick={() => GotoTicketBuy(event.id)}>
-                  Buy ticket
-                </button>
-              ) : (
-                <button disabled>sold Out</button>
-              )} */}
+              
             </div>
           </div>
         </div>

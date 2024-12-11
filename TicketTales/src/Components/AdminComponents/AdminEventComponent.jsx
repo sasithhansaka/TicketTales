@@ -12,7 +12,6 @@ function AdminEventComponent() {
       try {
         const response = await axios.get("http://localhost:8080/AllEvents");
         setEvents(response.data);
-        // console.log(response.data)
       } catch (error) {
         console.error("Error fetching data", error);
         setError("Failed to load data");

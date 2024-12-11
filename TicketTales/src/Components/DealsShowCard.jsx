@@ -33,10 +33,10 @@ const DealsShowCard = () => {
     .toLocaleString("default", { month: "long" })
     .toUpperCase();
 
-    const GotoTicketBuy = (eventid) => {
-      console.log("click");
-      navigate("/PurchaseTicket", { state: { eventid } });
-    };
+  const GotoTicketBuy = (eventid) => {
+    console.log("click");
+    navigate("/PurchaseTicket", { state: { eventid } });
+  };
 
   const filterEvents = events.filter((event) => {
     const isEvenetType = event.ticket_type && event.ticket_type === "Deals";
@@ -86,15 +86,14 @@ const DealsShowCard = () => {
                 {event.ticket_type === "Deals" ? (
                   <div>
                     <p className="event-ticket_price">
-                      
                       <strong className="highlight">
-                        {(event.ticket_price.toFixed(2)-1000)} LKR
+                        {event.ticket_price.toFixed(2) - 1000} LKR
                       </strong>
                       <span
                         style={{
                           textDecoration: "line-through",
                           marginRight: "8px",
-                          marginLeft:'4px'
+                          marginLeft: "4px",
                         }}
                       >
                         {event.ticket_price.toFixed(2)} LKR
@@ -112,9 +111,6 @@ const DealsShowCard = () => {
                   </div>
                 )}
                 
-                {/* <div className="Star-function">
-              <p>{event.show_date}</p>
-            </div> */}
               </div>
 
               {event.available_seats > 0 ? (
