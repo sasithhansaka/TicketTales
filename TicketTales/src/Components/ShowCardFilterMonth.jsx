@@ -38,20 +38,19 @@ const ShowCard = () => {
       navigate("/PurchaseTicket", { state: { eventid } });
     };
 
-  const filterEvents = events.filter((event) => {
-    const isMonthMatch =
-      event.show_date && event.show_date.toUpperCase() === currentMonth;
-    // const isTicketTypeMatch = event.ticket_type && event.ticket_type === "Basic";
-    return isMonthMatch;
-  });
+  // const filterEvents = events.filter((event) => {
+  //   const isMonthMatch =
+  //     event.show_date && event.show_date.toUpperCase() === currentMonth;
+  //   return isMonthMatch;
+  // });
 
-  const lastFourevents = filterEvents.slice(-4);
+  // const lastFourevents = filterEvents.slice(-4);
 
   return (
     <div>
       <div className="clothe-card-container">
-        {lastFourevents.length > 0 ? (
-          lastFourevents.map((event) => (
+        {events.length > 0 ? (
+          events.map((event) => (
             <div className="show-card" key={event.id}>
               {event.ticket_type === "Deals" ? (
                 <div className="deal-card"></div>

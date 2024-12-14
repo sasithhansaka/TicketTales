@@ -110,7 +110,6 @@ const DealsShowCard = () => {
                     </p>
                   </div>
                 )}
-                
               </div>
 
               {event.available_seats > 0 ? (

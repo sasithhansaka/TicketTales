@@ -40,6 +40,7 @@ public class EventController {
             @RequestParam("ticket_type") String ticket_type,
             @RequestParam("ticket_price") Double ticketPrice,
             @RequestParam("available_seats") int availableSeats,
+            @RequestParam("date_time") String date_time,
             @RequestParam("image") MultipartFile image)
             throws IOException {
 
@@ -53,6 +54,7 @@ public class EventController {
         event.setTicket_type(ticket_type);
         event.setTicket_price(ticketPrice);
         event.setAvailable_seats(availableSeats);
+        event.setDate_time(date_time);
         event.setImage(imageBytes);
 
         return eventService.eventSave(event);

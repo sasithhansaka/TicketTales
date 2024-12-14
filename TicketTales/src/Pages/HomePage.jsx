@@ -6,6 +6,7 @@ import ShowCardFilterbottom from "../Components/ShowCardFilterbottom";
 import DealsShowCard from "../Components/DealsShowCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import ShowCardAllEvents from "../Components/ShowCardAllEvents";
 
 const HomePage = () => {
   const naigate = useNavigate();
@@ -70,6 +71,8 @@ const HomePage = () => {
           <i class="fa-solid fa-angle-right" style={{fontSize:'15px',marginLeft:'7px'}}></i>
         </button>
       </div>
+
+      
       <ShowCard />
 
       <div className="Show-card-Header">
@@ -81,6 +84,9 @@ const HomePage = () => {
         </button>
       </div>
       <DealsShowCard />
+
+
+
 
       {/* <div>
       <img src="./src/Images/gift-voucher image.png"/>
