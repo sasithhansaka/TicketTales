@@ -41,5 +41,10 @@ public class UserController {
        return userService.GetallUserDetails();
     }
 
+    @GetMapping(path = "/detailsByemail/{email}")
+    public User getProductByEmail(@PathVariable String email) {
+        return userService.getProductByEmail(email);
+    }
+
 
 }

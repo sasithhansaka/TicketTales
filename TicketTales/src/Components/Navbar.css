@@ -75,9 +75,7 @@
   position: absolute;
 }
 
-.favcount_number {
-  margin-left: 40px;
-}
+
 
 .logo strong{
   color: #5872f2;
@@ -107,4 +105,22 @@
 }
 .else-sign-in-div{
   margin-left: 520px;
+}
+
+
+
+.div-my-profile {
+  width: 150px;
+  height: 40px;
+  background-color: #1259f3;
+  border-radius:5px ;
+  color: #ffffff;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-left: 570px;
+  cursor: pointer;
+}
+.div-my-profile i{
+  margin-left: 15px;
 }

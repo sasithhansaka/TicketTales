@@ -33,4 +33,7 @@ public class UserService {
                return userRepository.findAll();
    }
 
+    public User getProductByEmail(String email) {
+        return userRepository.findDetailsByEmail(email); // Use the autowired instance
+    }
 }
