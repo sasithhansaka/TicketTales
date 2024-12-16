@@ -38,11 +38,6 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        {/* <i
-          className="fa-regular fa-user"
-          onClick={() => handleNavigate("/UserProfile")}
-        ></i> */}
-        {/* </div> */}
 
         {email === null ? (
           <div className="else-sign-in-div">

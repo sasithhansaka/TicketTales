@@ -98,8 +98,8 @@ function AdminEventComponent() {
 
   return (
     <div>
-      <button onClick={toggleAddEvent}>
-        {isAddEventVisible ? "Close Add Event" : "Add Event"}
+      <button onClick={toggleAddEvent} className="add-event-div-navigate-button">
+        {isAddEventVisible ? "Close" : "Add Event"}
       </button>
       {isAddEventVisible && (
         <div className="add-event-div">

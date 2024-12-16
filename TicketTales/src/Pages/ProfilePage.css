@@ -16,3 +16,10 @@
    font-family: "Poppins", sans-serif;
    color: #111111bd;
 }
+
+.user-details-div{
+    padding: 70px;
+    width: 40%;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    border-radius: 25px;
+}

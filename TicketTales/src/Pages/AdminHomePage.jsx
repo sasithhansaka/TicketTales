@@ -3,6 +3,7 @@ import "./AdminHomePage.css";
 import AdminHomeComponent from '../Components/AdminComponents/AdminHomeComponent';
 import AdminEventComponent from '../Components/AdminComponents/AdminEventComponent';
 import AdminUserComponents from '../Components/AdminComponents/AdminUserComponents';
+import AdminNavbar from '../Components/AdminComponents/AdminNavbar';
 
 function AdminHomePage() {
 
@@ -20,20 +21,17 @@ function AdminHomePage() {
         setstep(3)
     }
 
-
-
-
-
-
   return (
     <div>
         <div className='body-container'>
+            <AdminNavbar/>
            <div className='slider-bar-container'>
-              <button onClick={GotoDashBoardView}>DashBoard</button>
-              <button onClick={GotoEventView}>EVENTS</button>
-              <button onClick={GotoUsersView}>EVENTS</button>
+              <button onClick={GotoDashBoardView} className='admin-navbar-button'>DashBoard</button>
+              <button onClick={GotoEventView} className='admin-navbar-button'>EVENTS</button>
+              <button onClick={GotoUsersView} className='admin-navbar-button'>USERS</button>
               {/* <button onClick={GotoDashBoardView}>DashBoard</button>
               <button onClick={GotoDashBoardView}>DashBoard</button> */}
+              <button className='logout-button'>Logout</button>
 
            </div>
            <div className="navigate-sliders">
@@ -46,6 +44,8 @@ function AdminHomePage() {
             ):(
                 <p></p>
             )}
+
+
             
 
 

@@ -23,6 +23,7 @@ ChartJS.register(
 function AdminHomeComponent() {
   const [eventCounts, setEventCounts] = useState({ deal: 0, basic: 0 });
   const [events, setEvents] = useState([]);
+  const [userDetails, setUserDetails] = useState([]);
 
   useEffect(() => {
     const fetchEventData = async () => {
@@ -45,6 +46,22 @@ function AdminHomeComponent() {
         console.error("Error fetching event data:", error);
       }
     };
+
+    const fetchUserDetails = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8081/AllUserDeatils"
+        );
+        setUserDetails(response.data);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError("Failed to load data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserDetails();
 
     fetchEventData();
   }, []);
@@ -86,44 +103,106 @@ function AdminHomeComponent() {
 
   return (
     <div>
-      <div style={{display:'flex',gap:'20px'}}>
-      <div
-        style={{
-          width: "320px",
-          marginTop: "30px",
-          borderRadius: "25px",
-          backgroundColor: "aliceblue",
-          padding: "30px",
-          height:'440px'
-        }}
-      >
-        <h4>Upcoming shedules</h4>
-        <hr></hr>
+      <div style={{ display: "flex", gap: "20px",marginTop:'100px' }}>
+        <div
+          style={{
+            width: "320px",
+            marginTop: "30px",
+            borderRadius: "25px",
+            backgroundColor: "aliceblue",
+            padding: "30px",
+            height: "440px",
+          }}
+        >
+          <h4>Upcoming shedules</h4>
+          <hr></hr>
 
-        {lastten.length > 0 ? (
-          lastten.map((event, index) => (
-            <div
-              key={index}
-              style={{ display: "flex", gap: "20px", marginTop: "20px" }}
-            >
-              <h4>{event.title}</h4>
-              <p>{event.venue}</p>
-            </div>
-          ))
-        ) : (
-          <p>No events available.</p>
-        )}
-      </div>
+          {lastten.length > 0 ? (
+            lastten.map((event, index) => (
+              <div
+                key={index}
+                style={{ display: "flex", gap: "20px", marginTop: "20px" }}
+              >
+                <h4>{event.title}</h4>
+                <p>{event.venue}</p>
+              </div>
+            ))
+          ) : (
+            <p>No events available.</p>
+          )}
+        </div>
 
-      <div className="bar" style={{ fontFamily: "Poppins, sans-serif" }}>
-        <h3>Event Type Distribution (Bar Chart)</h3>
-        <Bar data={chartData} options={chartOptions} />
-      </div>
-      
+        <div className="bar" style={{ fontFamily: "Poppins, sans-serif" }}>
+          <h3>Event Type Distribution (Bar Chart)</h3>
+          <Bar data={chartData} options={chartOptions} />
+        </div>
       </div>
 
       <div className="client-top-div">
-      <h4>Latest clients registrations</h4>
+        <h4>Latest clients registrations</h4>
+
+        <table style={{ width: "98%" }}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name </th>
+              <th>Email</th>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userDetails.map((user, index) => (
+              <tr key={index} style={{ height: "50px" }}>
+                <td
+                  style={{
+                    padding: "10px",
+                    textAlign: "left",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {user.id}
+                </td>
+                <td
+                  style={{
+                    padding: "10px",
+                    textAlign: "left",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {user.first_name}
+                </td>
+                <td
+                  style={{
+                    padding: "10px",
+                    textAlign: "left",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {user.last_name}
+                </td>
+                <td
+                  style={{
+                    padding: "10px",
+                    textAlign: "left",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {user.email}
+                </td>
+                <td
+                  style={{
+                    padding: "10px",
+                    textAlign: "left",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {user.contact_number}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
