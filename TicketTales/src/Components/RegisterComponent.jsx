@@ -72,7 +72,7 @@ function RegisterComponents() {
         />
         <p  className="text-label">Contact Number</p>
         <input
-          type="number"
+          type="text"
           onChange={handle_contact_number}
           value={contact_number}
           placeholder="Enter your contact number"

@@ -19,8 +19,10 @@ function AdminUserComponents() {
         }
       };
   
-      fetchEvents();
+      fetchuserdetails();
     }, []);
+
+    fetchuserdetails()
 
   return (
     <div>

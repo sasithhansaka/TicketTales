@@ -54,6 +54,15 @@ const DealsShowCard = () => {
               ) : (
                 <div></div>
               )}
+
+              {event.ticket_type === "Deals" ? (
+                <div className="Deals-star">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              ) : (
+                <p></p>
+              )}
+
               {event.show_date === currentMonth ? (
                 <div className="Star-function">
                   <p>{event.show_date}</p>

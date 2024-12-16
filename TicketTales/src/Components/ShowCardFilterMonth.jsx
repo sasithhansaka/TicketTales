@@ -8,7 +8,7 @@ const ShowCard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -26,31 +26,31 @@ const ShowCard = () => {
     fetchEvents();
   }, []);
 
-  if (loading) return <p>Loading events...</p>;
+  if (loading) return <div style={{display:'flex',gap:'300px',marginLeft:'180px',marginTop:'150px',marginBottom:'300px'}}><div className="loader"></div><div className="loader"></div><div className="loader"></div><div className="loader"></div></div> ;
   if (error) return <p>{error}</p>;
 
   const currentMonth = new Date()
     .toLocaleString("default", { month: "long" })
     .toUpperCase();
 
-    const GotoTicketBuy = (eventid) => {
-      console.log("click");
-      navigate("/PurchaseTicket", { state: { eventid } });
-    };
+  const GotoTicketBuy = (eventid) => {
+    console.log("click");
+    navigate("/PurchaseTicket", { state: { eventid } });
+  };
 
-  // const filterEvents = events.filter((event) => {
-  //   const isMonthMatch =
-  //     event.show_date && event.show_date.toUpperCase() === currentMonth;
-  //   return isMonthMatch;
-  // });
+  const filterEvents = events.filter((event) => {
+    const isMonthMatch =
+      event.show_date && event.show_date.toUpperCase() === currentMonth;
+    return isMonthMatch;
+  });
 
-  // const lastFourevents = filterEvents.slice(-4);
+  const lastFourevents = filterEvents.slice(-4);
 
   return (
     <div>
       <div className="clothe-card-container">
-        {events.length > 0 ? (
-          events.map((event) => (
+        {lastFourevents.length > 0 ? (
+          lastFourevents.map((event) => (
             <div className="show-card" key={event.id}>
               {event.ticket_type === "Deals" ? (
                 <div className="deal-card"></div>
@@ -58,15 +58,22 @@ const ShowCard = () => {
                 <div></div>
               )}
 
+              {event.ticket_type === "Deals" ? (
+                <div className="Deals-star">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              ) : (
+                <p></p>
+              )}
 
-           {event.show_date===currentMonth?(
-            <div className="Star-function">
-                <p>{event.show_date}</p>
-              </div>
-           ):(
-             <div></div>
-           )}
-              
+              {event.show_date === currentMonth ? (
+                <div className="Star-function">
+                  <p>{event.show_date}</p>
+                </div>
+              ) : (
+                <div></div>
+              )}
+
               {event.image && (
                 <img
                   src={`data:image/jpeg;base64,${event.image}`}
@@ -74,11 +81,10 @@ const ShowCard = () => {
                 />
               )}
               <div className="showcard-event-details">
-                {event.ticket_type=="Deals"?(
-                <h4 className="event-title">{event.title}-Deals</h4>
-                
-                ):(
-                  <h4 className="event-title">{event.title} </h4> 
+                {event.ticket_type == "Deals" ? (
+                  <h4 className="event-title">{event.title}-Deals</h4>
+                ) : (
+                  <h4 className="event-title">{event.title} </h4>
                 )}
                 <div style={{ display: "flex", gap: "5px", marginTop: "8px" }}>
                   <i class="fa-solid fa-calendar-days"></i>
@@ -93,15 +99,14 @@ const ShowCard = () => {
                 {event.ticket_type === "Deals" ? (
                   <div>
                     <p className="event-ticket_price">
-                      
                       <strong className="highlight">
-                        {(event.ticket_price.toFixed(2)-1000)} LKR
+                        {event.ticket_price.toFixed(2) - 1000} LKR
                       </strong>
                       <span
                         style={{
                           textDecoration: "line-through",
                           marginRight: "8px",
-                          marginLeft:'4px'
+                          marginLeft: "4px",
                         }}
                       >
                         {event.ticket_price.toFixed(2)} LKR

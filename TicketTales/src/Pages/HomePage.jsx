@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="Navbar">
-         <Navbar/>
+        <Navbar />
         {/* <button onClick={GotoRegisterPage}>Register</button> */}
       </div>
       <div className="hero-section">
@@ -63,41 +63,63 @@ const HomePage = () => {
         <p>
           what's trending <strong class="highlight">this month</strong>
         </p>
-        <button className="this-month-button ">
-          This Month
-        </button>
+        <button className="this-month-button ">This Month</button>
         <button onClick={GotoEventPAge} className="View-button">
-          View More 
-          <i class="fa-solid fa-angle-right" style={{fontSize:'15px',marginLeft:'7px'}}></i>
+          View More
+          <i
+            class="fa-solid fa-angle-right"
+            style={{ fontSize: "15px", marginLeft: "7px" }}
+          ></i>
         </button>
       </div>
 
-      
       <ShowCard />
 
       <div className="Show-card-Header">
         <p>My Tickets Deals</p>
 
-        <button onClick={GotoEventPAge} className="View-button" style={{marginLeft:'880px'}}>
+        <button
+          onClick={GotoEventPAge}
+          className="View-button"
+          style={{ marginLeft: "880px" }}
+        >
           View More
-          <i class="fa-solid fa-angle-right" style={{fontSize:'15px',marginLeft:'7px'}}></i>
+          <i
+            class="fa-solid fa-angle-right"
+            style={{ fontSize: "15px", marginLeft: "7px" }}
+          ></i>
         </button>
       </div>
       <DealsShowCard />
 
-
-
-
-      {/* <div>
-      <img src="./src/Images/gift-voucher image.png"/>
-      </div> */}
+      <div className="e-ticket-resend-div">
+        <div style={{ width: "570px", marginLeft: "50px" }}>
+          <h2>RESEND YOUR E TICKETS</h2>
+          <p>
+            The "Resend Your E-Tickets" option allows users to effortlessly
+            retrieve previously purchased tickets by sending a duplicate copy to
+            their registered email address. This feature ensures that customers
+            can easily regain access to their tickets in case they were deleted,
+            misplaced, or not initially received. 
+          </p>
+          <button>Register now</button>
+        </div>
+        <img src="./src/Images/hero-illo.webp" />
+      </div>
 
       <div className="Show-card-Header">
         <p>Events</p>
 
-        <button onClick={GotoEventPAge} className="View-button" style={{marginLeft:'1020px'}}>
+        <button
+          onClick={GotoEventPAge}
+          className="View-button"
+          style={{ marginLeft: "1020px" }}
+        >
           View More
-          <i class="fa-solid fa-angle-right" style={{fontSize:'15px',marginLeft:'7px'}}></i>
+          <i
+            class="fa-solid fa-angle-right"
+            style={{ fontSize: "15px", marginLeft: "7px" }}
+          ></i>
         </button>
       </div>
 
@@ -106,7 +128,7 @@ const HomePage = () => {
 
       <button onClick={GotoAdminPage}>Admin</button>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

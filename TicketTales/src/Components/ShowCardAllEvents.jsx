@@ -26,7 +26,7 @@ function ShowCardAllEvents({ filter }) {
     fetchEvents();
   }, []);
 
-  if (loading) return <p>Loading events...</p>;
+  if (loading) return <div style={{display:'flex',gap:'300px',marginLeft:'180px',marginTop:'150px',marginBottom:'300px'}}><div className="loader"></div><div className="loader"></div><div className="loader"></div><div className="loader"></div></div> ;
   if (error) return <p>{error}</p>;
 
   const currentMonth = new Date()
@@ -58,6 +58,14 @@ function ShowCardAllEvents({ filter }) {
                 </div>
               ) : (
                 <div></div>
+              )}
+
+              {event.ticket_type === "Deals" ? (
+                <div className="Deals-star">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              ) : (
+                <p></p>
               )}
 
               {event.image && (

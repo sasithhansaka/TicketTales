@@ -52,11 +52,10 @@ p {
   cursor: pointer;
 }
 
-.hero-section .hero-image{
+.hero-section .hero-image {
   margin-left: 290px;
   /* margin-top: -30px; */
-
-} 
+}
 
 .Show-card-Header {
   margin-top: 40px;
@@ -70,7 +69,6 @@ p {
   font-size: 30px;
   font-weight: 300;
   color: #111111;
-
 }
 
 .Show-card-Header .highlight {
@@ -91,7 +89,7 @@ p {
   margin-left: 560px;
 }
 
-.Show-card-Header .View-button{
+.Show-card-Header .View-button {
   background-color: #ffffff;
   border: 1px solid #11111121;
   border-radius: 18px;
@@ -101,4 +99,69 @@ p {
   color: #111111;
   font-size: 15px;
   cursor: pointer;
+}
+
+.e-ticket-resend-div {
+  width: 84%;
+  height: 350px;
+  background-color: #dbdde3bb;
+  margin-left: 140px;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  /* gap: -10px; */
+  margin-top: 40px;
+  color: #111111;
+  border: 1px solid #11111101;
+}
+
+.e-ticket-resend-div h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #111111dc;
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
+}
+
+.e-ticket-resend-div img {
+  height: 330px;
+  object-fit: cover;
+}
+
+.e-ticket-resend-div button {
+  background-color: #dbdde3bb;
+  margin-top: 20px;
+  border: 1px solid #11111197;
+  border-radius: 5px;
+  width: 180px;
+  height: 37px;
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.e-ticket-resend-div p{
+  font-family: "Poppins", sans-serif;
+  color: #111111d2;
+  align-items: left;
+}
+
+.loader {
+  width: 40px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
 }

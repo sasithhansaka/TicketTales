@@ -192,7 +192,7 @@ function AdminEventComponent() {
       <table style={{ width: "98%" }}>
         <thead>
           <tr>
-            <th>Event ID</th>
+            {/* <th>Event ID</th> */}
             <th>Event Name</th>
             <th>Event Date</th>
             <th>Location</th>
@@ -203,19 +203,19 @@ function AdminEventComponent() {
           {events.length > 0 ? (
             events.map((event) => (
               <tr key={event.id} style={{ height: "50px" }}>
-                <td style={{ padding: "10px", textAlign: "center" }}>
+                {/* <td style={{ padding: "10px", textAlign: "center" }}>
                   {event.id}
-                </td>
-                <td style={{ padding: "10px", textAlign: "center" }}>
+                </td> */}
+                <td style={{ padding: "10px", textAlign: "left" ,fontWeight:'bold'}}>
                   {event.title}
                 </td>
-                <td style={{ padding: "10px", textAlign: "center" }}>
+                <td style={{ padding: "10px"}}>
                   {event.show_date}
                 </td>
-                <td style={{ padding: "10px", textAlign: "center" }}>
+                <td style={{ padding: "10px"}}>
                   {event.venue}
                 </td>
-                <td style={{ padding: "10px", textAlign: "center" }}>
+                <td style={{ padding: "10px"}}>
                   <button onClick={() => handleDelete(event.id)}>Delete</button>
                 </td>
               </tr>
@@ -234,7 +234,7 @@ function AdminEventComponent() {
         lastone.map((event) => (
           <div className="flex-div-lastevnet">
             <div key={event.id}>
-              <h2 className="head-title">Latest event</h2>
+              <h2 className="head-title">Upcoming event</h2>
               <img
                 className="last-im"
                 src={`data:image/jpeg;base64,${event.image}`}
