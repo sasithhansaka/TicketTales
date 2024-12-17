@@ -16,6 +16,8 @@ function BuyTicket() {
   const [popupcontent, setPopupContent] = useState(null);
   const [popupvisible, setIsPopupVisible] = useState(false);
 
+  const [successPopupVisible, setSuccessPopupVisible] = useState(false); // Success popup visibility
+
   const { eventid } = location.state || {};
 
   const [ticketQuantity, setTicketQuantity] = useState(1);
@@ -75,6 +77,10 @@ function BuyTicket() {
     setIsPopupVisible(false);
   };
 
+  const closeSuccessPopup = () => {
+    setSuccessPopupVisible(false);
+  };
+
   const confirmbooking = async () => {
     if (email === null) {
       console.log("require");
@@ -98,54 +104,38 @@ function BuyTicket() {
         data
       );
 
+      if (!successPopupVisible) {
+        setSuccessPopupVisible(true);
+  
+        setTimeout(() => {
+          setSuccessPopupVisible(false);
+        }, 3000);
+      }
+
       const emailResponse = await axios.post(
         "http://localhost:8082/send-email",
         {
           email,
           subject: `Ticket Confirmation: ${event.title}`,
           message: `
-    Hello ${email},
+Dear ${email},
 
-    🎉 Your Ticket Order has been Confirmed! 🎉
+Thank you for purchasing tickets to ${
+            event.title
+          }. Your booking has been confirmed, and we are excited to have you join us. Below are the details of your ticket:  
 
-    Thank you for purchasing tickets to the ${
-      event.title
-    }event. We are excited to have you join us! Here are your ticket details:
+- Event Title: ${event.title}  
+- Date & Time: ${event.date_time}  
+- Venue: ${event.venue}  
+- Ticket Quantity: ${ticketQuantity}  
+- Total Paid: ${totalCost.toFixed(2)} LKR  
+- Order Date: ${order_date}  
 
-    📅 Event Title: ${event.title}
-    🗓️ Event Date & Time:${event.date_time}
-    📍 Venue: ${event.venue}
+Please note that each ticket is valid for one person and must be presented at the venue entrance. Tickets are non-refundable unless the event is canceled or rescheduled. Additional information regarding event policies, entry requirements, and prohibited items can be found on our official platform. For any inquiries, feel free to reach out to us at +94 001 001 222.
 
-    🛒 Your Order Details:
-    -----------------------------------
-    ➡️ Ticket Quantity: ${ticketQuantity}
-    ➡️ Total Price:${totalCost.toFixed(2)} LKR
-    ➡️ Order Date: ${order_date}
-
-    📅 Important Information:
-    ------------------------------
-    - Ticket Validity:Each ticket is valid for one person and must be presented at the entrance.
-    - Refunds and Exchanges: All tickets are non-refundable, unless the event is canceled or rescheduled.
-    - Event Policies:For your convenience, please check out the event's policies for entry, re-entry, and prohibited items.
-
-    🛍️ Ticket Delivery:
-    -------------------------
-    Your tickets will be available for collection at the venue or will be sent to your registered email closer to the event date. Make sure to keep your tickets safe!
-
-    🎁 Additional Information:
-    ------------------------------
-    - Access your booking anytime by visiting your account on our platform.
-    - Don't miss out on event updates follow us on social media or subscribe to our newsletter for the latest information.
-
-    We hope you have an amazing time at the event! 🎶🎤
-
-    Best regards,
-    The ${event.title} Team
-
-    📧 For any inquiries, reach out to us :+94 001 001 222
-
-    ------------------------
-    TicketTales.lk
+Best regards,  
+The ${event.title} Team  
+TicketTales.lk
   `,
         }
       );
@@ -229,6 +219,12 @@ function BuyTicket() {
                   </button>
                 </div>
               </div>
+              {successPopupVisible && (
+                <div className="order-success-popup">
+                  <p>Your order has been successfully placed!</p>
+                  {/* <button onClick={closeSuccessPopup}>OK</button> */}
+                </div>
+              )}
             </div>
           )}
 
@@ -388,7 +384,6 @@ function BuyTicket() {
                   sold Out
                 </button>
               )}
-              
             </div>
           </div>
         </div>
