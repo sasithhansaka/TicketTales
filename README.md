@@ -21,8 +21,7 @@ git clone https://github.com/sasithhansaka/TicketTales.git
 ## Set up the backend
 Navigate to the backend directory (or microservices folder, if applicable).
 
-Configure your MySQL database:
-
+##Configure your MySQL database:
 -Create a new MySQL database for the project (e.g., tickettales_db).
 -Important: Do not use default database credentials. Instead, create your own username and password for security purposes.
 -Modify src/main/resources/application.properties to set your database connection details:
