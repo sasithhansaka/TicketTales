@@ -126,7 +126,7 @@ const HomePage = () => {
       <div className="Search-container"></div>
       <ShowCardFilterbottom />
 
-      <button onClick={GotoAdminPage}>Admin</button>
+      <button onClick={GotoAdminPage} style={{opacity:0}}>Admin</button>
 
       <Footer />
     </div>
